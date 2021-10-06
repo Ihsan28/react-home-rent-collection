@@ -1,10 +1,11 @@
 import React from 'react';
-import Component from './Renter.css';
+import './Renter.css';
 
 const Renter = (props) => {
     return (
         <div className="renter">
-            <img src="" alt="" />
+            <img src={props.img} alt="" />
+
         </div>
     );
 };

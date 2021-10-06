@@ -1,19 +1,24 @@
-import from './Renters.css';
 import React, { useEffect, useState } from 'react';
 import Renter from '../Renter/Renter';
+import './Renters.css';
 
 
 const Renters = () => {
-    const [renter, setRenter] = useState([]);
+    const [renters, setRenters] = useState([]);
 
-    useEffect{
-        fetch("../../../public/tools.JSON")
+    useEffect(() => {
+        fetch("../../../public/renters.json")
         .then(res=>res.json)
-        .then(data=>setRenter(data));
-    }
+        .then(data =>console.log(data));
+    },[]);
     return (
         <div>
-            renter.map(<Renter img={renter.image} name={renter.name} age={renter.age} phone={renter.phone} flatNo={renter.flatNo} rent={renter.rent}></Renter>)
+            
+            {
+                renters.map(renters => 
+                    <Renter img={renters.image} name={renters.name} age={renters.age} phone={renters.phone} flatNo={renters.flatNo} rent={renters.rent}></Renter>
+                )
+            }
         </div>
     );
 };
