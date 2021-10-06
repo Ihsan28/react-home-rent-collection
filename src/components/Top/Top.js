@@ -3,9 +3,8 @@ import React from 'react';
 const Top = () => {
     return (
         <div>
-            <p>
-                This is a rent colection system
-            </p>
+            <h1>Home Rent Collection</h1>
+            <h2>Total Collection: 86000Tk</h2>
         </div>
     );
 };

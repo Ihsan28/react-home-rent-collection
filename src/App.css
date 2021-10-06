@@ -1,7 +1,15 @@
 .App {
   text-align: center;
 }
-
+.container {
+  grid-column: 3fr,1fr;
+  grid-template-columns: minmax(.5fr,1fr);
+}
+.renters-card{
+  grid-column: repeat(1fr,3);
+  grid-gap: 5px;
+  
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
