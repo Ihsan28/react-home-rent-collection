@@ -1,12 +1,11 @@
 import React from 'react';
 import './Total.css';
+import MiniCard from '../MiniCard/MiniCard'
 
 const Total = (props) => {
     return (
         <div className="total">
-            <h2>total amount: {props.total}</h2>
-            <h2>{props.name}</h2>
-            <p>{props.age}</p>
+            {/* <MiniCard></MiniCard> */}
         </div>
     );
 };

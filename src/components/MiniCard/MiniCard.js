@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Mini-card = () => {
+const MiniCard = (props) => {
     return (
         <div className="mini-card">
             <br />
@@ -17,4 +17,4 @@ const Mini-card = () => {
     );
 };
 
-export default Mini-card;
+export default MiniCard;

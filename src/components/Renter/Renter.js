@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import Total from '../Total/Total';
 import MiniCard from '../MiniCard/MiniCard';
+
 import './Renter.css';
 
 const Renter = (props) => {
-    const [list,setList]= useState([]);
-    let flat= 0;
-    const addToList = () => {
-        <MiniCard prop={list}></MiniCard>
-    };
-    useEffect{ () => {
-        setList(props);
-    }
-        
-    };
+    const clicked=()=> addToList(props);
     return (
         
         <div className="renter">
@@ -25,16 +18,14 @@ const Renter = (props) => {
             <p>Phone: {props.phone}</p>
             <p>Rent: <span className="focused">{props.rent}</span></p>
             <br />
-            <button onClick={addToList}>COLLECT RENT</button>
+            <button onClick={clicked}>COLLECT RENT</button>
             <br />
-
-            
-
         </div>
     );
 };
 
-function setList(props){
-
-}
+const addToList = (props) => {
+    console.log(props);
+   <Total ><MiniCard key={props.flatNo} name={props.name} image={props.image} rent={props.rent}></MiniCard></Total>
+};
 export default Renter;
