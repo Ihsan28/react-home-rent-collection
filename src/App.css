@@ -2,25 +2,13 @@
   text-align: center;
 }
 .container {
-  grid-column: 3fr,1fr;
-}
-.renters-card{
-  grid-column: repeat(1fr,3);
-  grid-template-columns: minmax(.5fr,1fr);
-  grid-gap: 5px;
-  
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  max-width: 100%;
+  clear:left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
 
 

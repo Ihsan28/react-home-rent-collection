@@ -7,16 +7,15 @@ const Renters = () => {
     const [renters, setRenters] = useState([]);
 
     useEffect(() => {
-        fetch("../../../public/renters.json")
-        .then(res=>res.json)
-        .then(data =>console.log(data));
+        fetch("./renters.json")
+        .then(res=>res.json())
+        .then(data =>setRenters(data));
     },[]);
     return (
-        <div>
-            
+        <div className="renters">
             {
-                renters.map(renters => 
-                    <Renter img={renters.image} name={renters.name} age={renters.age} phone={renters.phone} flatNo={renters.flatNo} rent={renters.rent}></Renter>
+                renters.map(renter => 
+                    <Renter key={renter.flatNo} img={renter.image} name={renter.name} age={renter.age} phone={renter.phone} flatNo={renter.flatNo} rent={renter.rent}></Renter>
                 )
             }
         </div>

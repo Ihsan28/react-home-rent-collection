@@ -1,4 +1,4 @@
-.renter{
+.mini-card{
     display: flex;
     flex-direction: column;
     justify-content: top;
@@ -12,16 +12,16 @@
     box-shadow: 10px 10px 20px gray;
     text-overflow: hidden;
 }
-.renter img{
+.mini-card img{
     width: 250px;
     height: 250px;
     border-radius: 50%;
     margin:auto auto;
 }
-.renter p{
+.mini-card p{
     font-weight: 450;
 }
-.renter h2{
+.mini-card h2{
     text-shadow: 0 5px rgba(133, 160, 160, 0.37);
     font-weight: bold;
     font-size:2em;
@@ -29,7 +29,7 @@
 .focused{
     font-weight:900;
 }
-.renter button{
+.mini-card button{
     width: 250px;
     height: 50px;
     border: 2px solid black;
