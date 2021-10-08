@@ -3,19 +3,20 @@ import Renter from '../Renter/Renter';
 import './Renters.css';
 
 
-const Renters = () => {
+const Renters = (props) => {
     const [renters, setRenters] = useState([]);
-
+    
     useEffect(() => {
         fetch("./renters.json")
         .then(res=>res.json())
         .then(data =>setRenters(data));
     },[]);
+
     return (
         <div className="renters">
             {
                 renters.map(renter => 
-                    <Renter key={renter.flatNo} img={renter.image} name={renter.name} age={renter.age} phone={renter.phone} flatNo={renter.flatNo} rent={renter.rent}></Renter>
+                    <Renter renterCart={props.renterCart} key={renter.flatNo} renter={renter} ></Renter>
                 )
             }
         </div>
@@ -23,3 +24,5 @@ const Renters = () => {
 };
 
 export default Renters;
+
+// img={renter.image} name={renter.name} age={renter.age} phone={renter.phone} flatNo={renter.flatNo} rent={renter.rent}
