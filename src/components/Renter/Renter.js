@@ -5,7 +5,7 @@ import './Renter.css';
 
 const Renter = (props) => {
     const {name,image,age,flatNo,rent,phone}= props.renter;
-    console.log(props.renter);
+    // console.log(props.renter);
 
     return (
         <div className="renter">
@@ -17,7 +17,7 @@ const Renter = (props) => {
             <p>Phone: {phone}</p>
             <p>Rent: <span className="focused">{rent}</span></p>
             <br />
-            <button onClick={()=>props.renterCart(props.renter)}>COLLECT RENT</button>
+            <button onClick={()=>props.renterCart(props.renter)}> COLLECT RENT </button>
             <br />
         </div>
     );
