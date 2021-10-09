@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Total from '../Total/Total';
-import MiniCard from '../MiniCard/MiniCard';
 import './Renter.css';
 
 const Renter = (props) => {

@@ -5,23 +5,33 @@ import Total from "./components/Total/Total";
 import { useState } from "react";
 
 function App() {
-  const [renterGroup,setRenterGroup] = useState([]);
+  const [renterGroups,setRenterGroups] = useState([]);
+  const[total,setTotal]= useState(0);
     
-    function renterCart(newRenter){
-      const update= [...renterGroup,newRenter];
-      const filtered= [...new Set(update)];
-        setRenterGroup(filtered);
-    }
+  function addRent(rent){
+    let sum = total;
+    sum=sum+ rent;
+    setTotal(sum);
+  }
 
+  function renterCart(newRenter){
+    const update= [...renterGroups,newRenter];
+    const filtered= [...new Set(update)];
+      setRenterGroups(filtered);
+      if(!renterGroups.map(renterGroup=> renterGroup.findIndex(newRenter.flatNo)))
+      {
+        addRent(newRenter.rent);
+      }
+      
+  }
+    
   return (
     <div className="App">
 
       <Top></Top>
-
       <div className="container">
         <div><Renters renterCart={renterCart}></Renters></div>
-        <div><Total renterGroup={renterGroup}></Total></div>
-        
+        <div><Total total={total} renterGroups={renterGroups}></Total></div>
       </div>
     </div>
   );
