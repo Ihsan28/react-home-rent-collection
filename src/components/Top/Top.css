@@ -1,0 +1,8 @@
+.top{
+    top: 0px;
+    position: sticky;
+    background: #446da0d8;
+    font-weight: bolder;
+    font-size: large;
+    color: rgba(250, 255, 255, 0.877);
+}

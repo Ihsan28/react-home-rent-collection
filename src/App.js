@@ -8,21 +8,17 @@ function App() {
   const [renterGroups,setRenterGroups] = useState([]);
   const[total,setTotal]= useState(0);
     
-  function addRent(rent){
-    let sum = total;
-    sum=sum+ rent;
-    setTotal(sum);
-  }
 
   function renterCart(newRenter){
+
     const update= [...renterGroups,newRenter];
     const filtered= [...new Set(update)];
+    const rentList= filtered.map(filter => {return filter.rent;});
+    let sum= 0;
+    rentList.map(rent =>{sum = sum + parseInt(rent); })
+    setTotal(sum);
       setRenterGroups(filtered);
-      if(!renterGroups.map(renterGroup=> renterGroup.findIndex(newRenter.flatNo)))
-      {
-        addRent(newRenter.rent);
-      }
-      
+     
   }
     
   return (
@@ -31,7 +27,7 @@ function App() {
       <Top></Top>
       <div className="container">
         <div><Renters renterCart={renterCart}></Renters></div>
-        <div><Total total={total} renterGroups={renterGroups}></Total></div>
+        <div ><Total total={total} renterGroups={renterGroups}></Total></div>
       </div>
     </div>
   );
